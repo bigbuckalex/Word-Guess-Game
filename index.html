@@ -9,17 +9,22 @@
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
 
 </head>
-<body>
-    <h1>Word Guess Game</h1>
+<body onkeyup="guessLetter(event.key)">
+    <div id="content">
+        <h1>Word Guess Game</h1>
 
-    <p>Current Word</p>
-    <p id="blanks"></p>
-    <p>Number Of Guesses Remaining</p>
-    <p id="numGuesses"></p>
-    <p>Letters Already Guessed</p>
-    <p id="letGuesses"></p>
-    
-
-    <script src="assets/javascript/game.js"></script>
+        <h2>Current Word</h2>
+        <p id="blanks"></p>
+        <h2>Number Of Guesses Remaining</h2>
+        <p id="numGuesses"></p>
+        <h2>Wins</h2>
+        <p id="wins">0</p>
+        <h2>Letters Already Guessed</h2>
+        <p id="letGuesses"></p>
+        <!-- <input type="text" size="30" onkeydown="guessLetter(event.key)"> -->
+        <!-- <input onkeydown="guessLetter(event.key)">
+        <input onkeydown="guessLetter(event.key)"> -->
+        <script src="assets/javascript/game.js"></script>
+    </div>
 </body>
 </html>
