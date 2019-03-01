@@ -6,25 +6,34 @@ body{
 }
 
 h1{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: 40px;
+    font-family: 'Patrick Hand SC', cursive;
+    font-weight: 500;
+    font-size: 50px;
+    color: rgb(225, 230, 225);
 }
 
 h2{
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family: 'Patrick Hand SC', cursive;
     font-size: 28px;
     margin: 20px;
+    color: rgb(225, 230, 225);
 }
 
 p{
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 20px;
+    font-family: 'Inconsolata', monospace;
+    font-size: 22px;
     letter-spacing: 5px;
+    position: relative;
+    top: -10px;
+    color: rgb(230, 230, 220);
 }
 
 #content{
-    background-color: aliceblue;
-    width: 650px;
+    background-image: url("https://ugcorigin.s-microsoft.com/100/bccd69cf-ae72-418c-a98f-3b296fad4e53/200/v1/image.jpg");
+    width: 740px;
+    height: 540px;
     padding: 30px;
     margin: auto;
+    border-radius: 10px;
+    border: 2px solid rgb(49, 49, 49);
 }

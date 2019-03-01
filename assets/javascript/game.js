@@ -1,4 +1,52 @@
-const possibleWords = ["apple","orange","lemon"];
+const possibleWords =  ["area",
+    "book",
+    "business",
+    "case",
+    "child",
+    "company",
+    "country",
+    "day",
+    "eye",
+    "fact",
+    "family",
+    "government",
+    "group",
+    "hand",
+    "home",
+    "job",
+    "life",
+    "lot",
+    "man",
+    "money",
+    "month",
+    "mother",
+    "night",
+    "number",
+    "part",
+    "people",
+    "place",
+    "point",
+    "problem",
+    "program",
+    "question",
+    "right",
+    "room",
+    "school",
+    "state",
+    "story",
+    "student",
+    "study",
+    "system",
+    "thing",
+    "time",
+    "water",
+    "way",
+    "week",
+    "woman",
+    "word",
+    "work",
+    "world",
+    "year"];
 let wins = 0;
 let lettersGuessed = [];
 let guessesRemaining = 10;
@@ -6,10 +54,6 @@ let winningWord = "";
 let blankWord = "";
 let guesses = "";
 let word = "";
-
-function replaceChar(index, char){
-
-}
 
 function win(){
     wins++;
@@ -24,7 +68,7 @@ function win(){
     selectWord();
     document.getElementById("blanks").innerHTML = blankWord;
     document.getElementById("numGuesses").innerHTML = guessesRemaining;
-    document.getElementById("letGuesses").innerHTML = lettersGuessed;
+    document.getElementById("letGuesses").innerHTML = "~";
 }
 
 function lose(){
@@ -38,24 +82,24 @@ function lose(){
     selectWord();
     document.getElementById("blanks").innerHTML = blankWord;
     document.getElementById("numGuesses").innerHTML = guessesRemaining;
-    document.getElementById("letGuesses").innerHTML = lettersGuessed;
+    document.getElementById("letGuesses").innerHTML = "~";
 }
 
 function selectWord(){
     winningWord = possibleWords[Math.floor(Math.random()*possibleWords.length)];
-    // let word = possibleWords[0];
-    // winningWord = "banana";
     console.log(winningWord);
     for(let i=0; i<winningWord.length; i++){
         blankWord = blankWord + "_";
     }
     document.getElementById("blanks").innerHTML = blankWord;
+    document.getElementById("numGuesses").innerHTML = guessesRemaining;
+    document.getElementById("letGuesses").innerHTML = "~";
 }
 
 function guessLetter(guess){
-    if(isLetter(guess)){
+    if(isLetter(guess.toLowerCase())){
         for(let i=0; i<winningWord.length; i++){
-            if(guess === winningWord[i]){
+            if(guess.toLowerCase() === winningWord[i]){
                 blankWord = blankWord.substring(0,i) + winningWord[i] + blankWord.substring(i+1);
                 document.getElementById("blanks").innerHTML = blankWord;
             }
@@ -79,15 +123,5 @@ function isLetter(str){
     return str.length === 1 && str.match(/[a-z]/i);
 }
 
-// window.onkeypress = guessLetter(event.key);
 selectWord();
-// if(guessesRemaining<1){
-//     lose();
-//     selectWord();
-// }
 
-// console.log(winningWord);
-// guessLetter('l');
-// console.log(blankWord);
-// guessLetter('a');
-// console.log(blankWord);
