@@ -52,7 +52,6 @@ let lettersGuessed = [];
 let guessesRemaining = 10;
 let winningWord = "";
 let blankWord = "";
-let guesses = "";
 let word = "";
 
 function win(){
@@ -63,7 +62,6 @@ function win(){
     lettersGuessed = [];
     winningWord = "";
     blankWord = "";
-    guesses = "";
     word = "";
     selectWord();
     document.getElementById("blanks").innerHTML = blankWord;
@@ -77,7 +75,6 @@ function lose(){
     lettersGuessed = [];
     winningWord = "";
     blankWord = "";
-    guesses = "";
     word = "";
     selectWord();
     document.getElementById("blanks").innerHTML = blankWord;
@@ -98,6 +95,9 @@ function selectWord(){
 
 function guessLetter(guess){
     if(isLetter(guess.toLowerCase())){
+        for(let i=0; i<lettersGuessed.length; i++){
+            if(guess.toLowerCase() === lettersGuessed[i]) return;
+        }
         for(let i=0; i<winningWord.length; i++){
             if(guess.toLowerCase() === winningWord[i]){
                 blankWord = blankWord.substring(0,i) + winningWord[i] + blankWord.substring(i+1);
@@ -108,11 +108,10 @@ function guessLetter(guess){
                 return;
             }
         }
-        if(guessesRemaining<1) return;
         guessesRemaining--;
         document.getElementById("numGuesses").innerHTML = guessesRemaining;
-        guesses = guesses + guess;
-        document.getElementById("letGuesses").innerHTML = guesses;
+        lettersGuessed.push(guess);
+        document.getElementById("letGuesses").innerHTML = lettersGuessed;
         if(guessesRemaining<1){
             lose();
         }
