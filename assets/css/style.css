@@ -2,7 +2,8 @@ body{
     margin: auto;
     margin-top: 100px;
     text-align: center;
-    background-image: url("https://timedotcom.files.wordpress.com/2018/09/scrabble-new-words-2018.jpg?quality=85");
+    background-image: url("../images/ScrabbleWords.jpg");
+    background-size: 100%;
 }
 
 h1{
@@ -29,7 +30,8 @@ p{
 }
 
 #content{
-    background-image: url("https://ugcorigin.s-microsoft.com/100/bccd69cf-ae72-418c-a98f-3b296fad4e53/200/v1/image.jpg");
+    background-image: url("../images/BlankChalkboard.jpg");
+    background-size: 100%;
     width: 740px;
     height: 540px;
     padding: 30px;
